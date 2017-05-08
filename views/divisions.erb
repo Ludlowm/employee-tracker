@@ -12,7 +12,7 @@
     <% if @divisions.any? %>
     <ul>
       <% @divisions.each do |division| %>
-      <li><%= division.title %></li>
+      <li><a href="/division/<%= division.id %>"><%= division.title %></a></li>
       <% end %>
     </ul>
     <% else %>

@@ -1,1 +1,23 @@
 <h1>Employees</h1>
+
+<div class="row">
+    <div class="col-md-6">
+      <form action="/add_employee" method="post">
+        <label>Add an Employee</label>
+        <input type="text" name="add-employee">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <%if @employees.any?%>
+      <ul>
+        <% @employees.each do |employee| %>
+        <li><%= employee.name %></li>
+        <% end %>
+      </ul>
+      <%else%>
+      <em>No available employees</em>
+      <%end%>
+    </div>
+</div>
