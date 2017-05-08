@@ -1,0 +1,22 @@
+<h1>Divisions</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <form action="/add_division" method="post">
+      <label>Add a division:</label>
+      <input type="text" name="add-division">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <% if @divisions.any? %>
+    <ul>
+      <% @divisions.each do |division| %>
+      <li><%= division.title %></li>
+      <% end %>
+    </ul>
+    <% else %>
+    <em>No available divisions</em>
+    <% end %>
+  </div>
+</div>
